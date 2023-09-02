@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CASO3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Solicitar al usuario ingresar el número de alumnos
+            Console.Write("Ingrese el número de alumnos: ");
+            int numAlumnos = int.Parse(Console.ReadLine());
+
+            // Inicializar variables
+            double costoPorAlumno = 0.0;
+            double costoTotalViaje = 0.0;
+
+            // Calcular el costo por alumno y el costo total del viaje
+            if (numAlumnos >= 100)
+            {
+                costoPorAlumno = 65.00;
+                costoTotalViaje = costoPorAlumno * numAlumnos;
+            }
+            else if (numAlumnos >= 50 && numAlumnos <= 99)
+            {
+                costoPorAlumno = 70.00;
+                costoTotalViaje = costoPorAlumno * numAlumnos;
+            }
+            else if (numAlumnos >= 30 && numAlumnos <= 49)
+            {
+                costoPorAlumno = 95.00;
+                costoTotalViaje = costoPorAlumno * numAlumnos;
+            }
+            else if (numAlumnos < 30)
+            {
+                costoPorAlumno = 0.0;
+                costoTotalViaje = 4000.00;
+            }
+
+            // Mostrar resultados
+            Console.WriteLine("Costo por alumno: $" + costoPorAlumno.ToString("0.00"));
+            Console.WriteLine("Costo total del viaje: $" + costoTotalViaje.ToString("0.00"));
+
+            Console.ReadLine();
+        }
+    }
+}
